@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+
+:root {
+  /* Colours */
+  --clr-black: hsl(0, 0%, 1%);
+  --clr-medium-brown: hsl(30, 5%, 45%);
+  --clr-light-cream: hsl(28, 100%, 97%);
+  --clr-galactic-blue: hsl(252, 66%, 62%);
+  --clr-summer-yellow: hsl(28, 89%, 67%);
+  --clr-pink: hsl(0, 78%, 79%);
+  --clr-light-red: hsl(7, 77%, 66%);
+  --clr-cyan: hsl(172, 46%, 57%);
+  --clr-dark-purple: hsl(314, 45%, 23%);
+
+  /* Fonts */
+  --ff-primary: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a,
+a:active {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General styles */
+
+body {
+  background: var(--clr-light-cream);
+  font-family: var(--ff-primary);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Utilities */
+
+.heading-lg {
+  font-size: 2.25rem;
+  line-height: 45px;
+}
+
+.heading-md {
+  font-size: 2.5rem;
+  line-height: 51px;
+}
+
+.heading-sm {
+  font-size: 2rem;
+  line-height: 40px;
+}
+
+.body-text {
+  color: var(--clr-medium-brown);
+  font-size: 1rem;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.button {
+  all: unset;
+  background: var(--bg-color, black);
+  border-radius: 28px;
+  color: var(--clr-light-cream);
+  font-size: 0.875rem;
+  line-height: 28px;
+  padding: 0.5rem 1.75rem;
+}
+
+@media screen and (min-width: 768px) {
+  .heading-lg {
+    font-size: 3.5rem;
+    line-height: 70px;
+  }
+
+  .heading-md {
+    font-size: 2.5rem;
+    line-height: 51px;
+  }
+
+  .heading-sm {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+
+  .body-text {
+    font-size: 1.125rem;
+    line-height: 28px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 0.875rem 2.8125rem;
+  }
+}
+
+/* Header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Hero section */
+
+.hero {
+  text-align: center;
+  margin-bottom: 2.125rem;
+}
+
+.hero-title {
+  margin-block: 1rem;
+}
+
+/* Services section */
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'graphic-design graphic-design'
+    'ui-ux apps'
+    'illustrations illustrations'
+    'photography photography'
+    'motion-graphics motion-graphics';
+  gap: 1.5625rem;
+}
+
+.services a {
+  background-position: top 1.5rem right 1.5rem;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  color: var(--clr-light-cream);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.services div h2 {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+.graphic-design {
+  background: url('./assets/pattern-graphic-design.svg'), var(--clr-galactic-blue);
+  background-size: 128px 192px;
+  grid-area: graphic-design;
+  height: 364px;
+}
+
+.ui-ux {
+  background: url('./assets/pattern-ui-ux.svg'), var(--clr-summer-yellow);
+  background-size: 64px 64px;
+  grid-area: ui-ux;
+  height: 182px;
+}
+
+.illustrations {
+  background: url('./assets/pattern-illustrations.svg'), var(--clr-light-red);
+  background-size: 128px 64px;
+  grid-area: illustrations;
+  height: 182px;
+}
+
+.motion-graphics {
+  background: url('./assets/pattern-motion-graphics.svg'), var(--clr-dark-purple);
+  background-size: 128px 64px;
+  grid-area: motion-graphics;
+  height: 182px;
+}
+
+.photography {
+  background: url('./assets/pattern-photography.svg'), var(--clr-cyan);
+  background-size: 160px 64px;
+  grid-area: photography;
+  height: 182px;
+}
+
+.apps {
+  background: url('./assets/pattern-apps.svg'), var(--clr-pink);
+  background-size: 64px 64px;
+  grid-area: apps;
+  height: 182px;
+}
