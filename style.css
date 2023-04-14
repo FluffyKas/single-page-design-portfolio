@@ -108,6 +108,13 @@ body {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  body {
+    max-width: 1600px;
+    padding: 10.3125rem;
+  }
+}
+
 /* Utilities */
 
 .heading-lg {
@@ -214,6 +221,25 @@ footer img {
   margin-bottom: 6.125rem;
 }
 
+@media screen and (min-width: 768px) {
+  .services {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'graphic-design graphic-design ui-ux apps'
+      'graphic-design graphic-design illustrations illustrations'
+      'photography photography motion-graphics motion-graphics';
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .services {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      'graphic-design graphic-design ui-ux apps photography photography'
+      'graphic-design graphic-design illustrations illustrations motion-graphics motion-graphics';
+  }
+}
+
 .services a {
   background-position: top 1.5rem right 1.5rem;
   background-repeat: no-repeat;
@@ -250,11 +276,23 @@ footer img {
   height: 182px;
 }
 
+@media screen and (min-width: 768px) {
+  .illustrations {
+    height: 158px;
+  }
+}
+
 .motion-graphics {
   background: url('./assets/pattern-motion-graphics.svg'), var(--clr-dark-purple);
   background-size: 128px 64px;
   grid-area: motion-graphics;
   height: 182px;
+}
+
+@media screen and (min-width: 1200px) {
+  .motion-graphics {
+    height: 158px;
+  }
 }
 
 .photography {
