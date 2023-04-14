@@ -97,6 +97,15 @@ body {
   font-family: var(--ff-primary);
   min-height: 100vh;
   padding: 1rem;
+  max-width: 21.5rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 560px) {
+  body {
+    max-width: 768px;
+    padding: 2.5rem;
+  }
 }
 
 /* Utilities */
@@ -117,7 +126,6 @@ body {
 }
 
 .body-text {
-  color: var(--clr-medium-brown);
   font-size: 1rem;
   line-height: 26px;
   font-weight: 500;
@@ -162,13 +170,15 @@ body {
 
 /* Header */
 
-header {
+header,
+footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header img {
+header img,
+footer img {
   width: 48px;
   height: 48px;
 }
@@ -181,7 +191,12 @@ header img {
 }
 
 .hero-title {
-  margin-block: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-body {
+  color: var(--clr-medium-brown);
 }
 
 /* Services section */
@@ -196,6 +211,7 @@ header img {
     'photography photography'
     'motion-graphics motion-graphics';
   gap: 1.5625rem;
+  margin-bottom: 6.125rem;
 }
 
 .services a {
@@ -253,4 +269,47 @@ header img {
   background-size: 64px 64px;
   grid-area: apps;
   height: 182px;
+}
+
+/* About section */
+
+.about {
+  text-align: center;
+}
+
+.about img {
+  padding-inline: 1.375rem;
+}
+
+.about h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  margin-block: 1.5rem;
+}
+
+.about .button {
+  --bg-color: var(--clr-light-red);
+}
+
+/* CTA section */
+
+.cta {
+  background: var(--clr-black);
+  border-radius: 8px;
+  color: var(--clr-light-cream);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cta h2,
+.cta p {
+  margin-bottom: 1.5rem;
+}
+
+.cta .button {
+  --bg-color: var(--clr-light-red);
 }
