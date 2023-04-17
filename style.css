@@ -97,7 +97,6 @@ body {
   font-family: var(--ff-primary);
   min-height: 100vh;
   padding: 1rem;
-  max-width: 21.5rem;
   margin: 0 auto;
 }
 
@@ -111,7 +110,7 @@ body {
 @media screen and (min-width: 1200px) {
   body {
     max-width: 1600px;
-    padding: 10.3125rem;
+    padding-inline: 10.3125rem;
   }
 }
 
@@ -143,6 +142,7 @@ body {
   background: var(--bg-color, black);
   border-radius: 28px;
   color: var(--clr-light-cream);
+  cursor: pointer;
   font-size: 0.875rem;
   line-height: 28px;
   padding: 0.5rem 1.75rem;
@@ -190,6 +190,15 @@ footer img {
   height: 48px;
 }
 
+.header-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.header-button:hover {
+  background: var(--clr-galactic-blue);
+  transform: scale(1.05);
+}
+
 /* Hero section */
 
 .hero {
@@ -204,6 +213,26 @@ footer img {
 
 .hero-body {
   color: var(--clr-medium-brown);
+  max-width: 18rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-body {
+    max-width: 36rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-title {
+    margin-top: 4.125rem;
+    margin-bottom: 1.4375rem;
+  }
+
+  .hero-body {
+    max-width: 45.625rem;
+    margin-bottom: 6rem;
+  }
 }
 
 /* Services section */
@@ -247,6 +276,11 @@ footer img {
   color: var(--clr-light-cream);
   padding: 1.5rem;
   position: relative;
+  transition: all 0.25s ease-in-out;
+}
+
+.services a:hover {
+  transform: scale(1.05) translate(5px, -5px);
 }
 
 .services div h2 {
@@ -313,6 +347,7 @@ footer img {
 
 .about {
   text-align: center;
+  margin-bottom: 6.25rem;
 }
 
 .about img {
@@ -330,6 +365,46 @@ footer img {
 
 .about .button {
   --bg-color: var(--clr-light-red);
+}
+
+/* My work section */
+
+.my-work h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.glide__arrows {
+  padding-block: 3.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.glide__arrow {
+  all: unset;
+  background: var(--clr-black);
+  border-radius: 50%;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+
+.glide__arrow:hover {
+  background: var(--clr-galactic-blue);
+}
+
+.glide__arrow img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.glide__slide {
+  display: flex;
+  justify-content: center;
 }
 
 /* CTA section */

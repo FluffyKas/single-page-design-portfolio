@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
     <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Single Page Design Portfolio</title>
@@ -10,7 +11,7 @@
   <body>
     <header>
       <img src="./assets/logo.svg" alt="" />
-      <button class="button">Free Consulation</button>
+      <button class="button header-button">Free Consulation</button>
     </header>
     <main>
       <section class="hero">
@@ -59,7 +60,37 @@
       </section>
       <section class="my-work">
         <h2>My Work</h2>
-        <div class="slide-show"></div>
+        <div class="slide-show">
+          <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                  <img src="assets/image-slide-1.jpg" alt="" />
+                </li>
+                <li class="glide__slide">
+                  <img src="assets/image-slide-2.jpg" alt="" />
+                </li>
+                <li class="glide__slide">
+                  <img src="assets/image-slide-3.jpg" alt="" />
+                </li>
+                <li class="glide__slide">
+                  <img src="assets/image-slide-4.jpg" alt="" />
+                </li>
+                <li class="glide__slide">
+                  <img src="assets/image-slide-5.jpg" alt="" />
+                </li>
+              </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                <img src="assets/icon-arrow-left.svg" alt="" />
+              </button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                <img src="assets/icon-arrow-right.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="cta">
         <h2>Book a call with me</h2>
@@ -73,6 +104,23 @@
       <img src="./assets/logo.svg" alt="" />
       <button class="button">Free Consulation</button>
     </footer>
-    <script type="module" src="/main.js"></script>
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <script>
+      var select = document.querySelector('.glide');
+
+      var glide = new Glide('.glide', {
+        type: select.value,
+        focusAt: 'center',
+        perView: 3,
+      });
+
+      select.addEventListener('change', function (event) {
+        glide.update({
+          type: event.target.value,
+        });
+      });
+
+      glide.mount();
+    </script>
   </body>
 </html>
